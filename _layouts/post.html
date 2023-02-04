@@ -2,29 +2,45 @@
 layout: default
 ---
 
-<div class="post-content">
-  <style>
-      .image-gallery {overflow: auto; margin-left: -1%!important;}
-      .image-gallery a {float: left; display: block; margin: 0 0 1% 1%; width: 19%; text-align: center; text-decoration: none!important;}
-      .image-gallery a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
-      .image-gallery a img {width: 100%; display: block;}
-   </style>
-  
   {% if page.banner-image %}
     {% assign banner-pic = site.data.virtual-photography[page.slug][page.banner-image] %}
   {% else %}
     {% assign banner-pic = site.data.virtual-photography[page.slug][page.card-image] %}
   {% endif %}
-  
+
   {% assign ar = banner-pic.aspect-ratio | plus: 0 %}
+
+  <style>
+      .image-gallery {overflow: auto; margin-left: -1%!important;}
+      .image-gallery a {float: left; display: block; margin: 0 0 1% 1%; width: 19%; text-align: center; text-decoration: none!important;}
+      .image-gallery a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+      .image-gallery a img {width: 100%; display: block;}
+
+      .banner {
+      background-image: url('{{ banner-pic.image1080-link }}');
+      background-size: cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      }
+
+      .banner-text {
+        text-align: center;
+        color: white;
+      }
+
+      @media (max-width: 767px) {
+        .banner {
+          height: 200px;
+        }
+      }
+   </style>
   
-  <div class="album-banner">
-    <img loading="lazy" style="object-position: 0 {{page.banner-offset}}%;" src="{% if ar < 1 %} {{ banner-pic.imageFull-link }} {% else %} {{ banner-pic.image1080-link }} {% endif %}" alt="{{ page.title }}">
-    <div class="album-text">
-      <div class="album-title"><strong>{{ page.title }}</strong></div>
-      <div class="album-description">
-        <span class="date"><time datetime="{{ page.date | date_to_xmlschema }}"><strong>{{ page.date | date_to_string}}</strong></time>{% if page.developer %} | {{page.developer}} {% endif %}</span> 
-      </div>
+  <div class="banner">
+    <div class="banner-text">
+      <h1><strong>{{ page.title }}</strong></h1>
+      <p><span class="date"><time datetime="{{ page.date | date_to_xmlschema }}"><strong>{{ page.date | date_to_string}}</strong></time><strong>{% if page.developer %} | {{page.developer}} {% endif %}</strong></span> </p>
     </div>
   </div>
   
@@ -43,7 +59,7 @@ layout: default
     <div class="pig-wrapper">
         <div id="pig"></div>
     </div>
-    <script type="text/javascript" src="../../js/album/pig.js"></script>
+    <script type="text/javascript" src="../js/pig.js"></script>
     <script type="text/javascript">
       var imageData = [
       {% for image in site.data.virtual-photography[page.slug] %}
@@ -68,4 +84,3 @@ layout: default
       $( '.swipebox' ).swipebox();
       } )( jQuery );
     </script>
-</div>
