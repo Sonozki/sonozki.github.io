@@ -17,13 +17,15 @@ layout: default
       .image-gallery a img {width: 100%; display: block;}
 
       .banner {
-      background-image: url('{{ banner-pic.image1080-link }}');
-      background-size: cover;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 10px;
+        background-image: url('{{ banner-pic.image1080-link }}');
+        background-size: cover;
+        background-position: right 0px bottom {{page.banner-offset}}%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+
       }
 
       .banner-text {

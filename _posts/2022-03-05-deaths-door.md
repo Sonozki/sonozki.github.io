@@ -9,5 +9,5 @@ description:
 developer: Acid Nerve
 card-image: 10
 banner-image: 5
-banner-offset: 95
+banner-offset: 5
 ---
