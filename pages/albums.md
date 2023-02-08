@@ -1,6 +1,6 @@
 ---
 layout: category
 title: Albums
-category: posts
-permalink: /albums
+category: sample
+permalink: /sample-posts
 ---
