@@ -8,7 +8,7 @@ google-ID: ''
 
 menu:
 - {name: 'About',              url: 'about'}
-- {name: 'Albums',            url: 'albums'}
+- {name: 'Albums',            url: 'posts'}
 - {name: 'Contact',            url: 'contact'}
 
 
