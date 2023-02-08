@@ -4,4 +4,4 @@ title: About
 permalink: /about
 ---
 
-Millennial is a minimalist Jekyll theme. The purpose of this theme is to provide a simple, clean, content-focused publishing platform for your publication site or blog. You can find everything you need to get started under documentation. For more information on how to install and use this theme, check out [the documentation]({{ site.github.url }}).
+Hello, my name is Sven and I'm a "virtual photographer". I like to capture moments in videogames with ingame photomodes, or dedicated camera tools as created by Frans Bouma. Most of my shots feature some more or less ReShade useage. Enjoy your stay and feel free to get in touch with me.
