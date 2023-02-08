@@ -1,6 +1,6 @@
 ---
 layout: category
 title: Albums
-category: sample
+category: posts
 permalink: /albums
 ---
